@@ -22,6 +22,7 @@ class Book {
       return false
     } else {
       this.#isBorrowed = true;
+      return true;
     }
   }
 
