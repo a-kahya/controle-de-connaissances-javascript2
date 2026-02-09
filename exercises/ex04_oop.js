@@ -18,16 +18,20 @@ class Book {
   }
 
   borrow() {
-    // TODO : si déjà emprunté -> false
-    // sinon marquer emprunté -> true
+    if(this.#isBorrowed === true){
+      return false
+    } else {
+      this.#isBorrowed = true;
+    }
   }
 
   returnBook() {
-    // TODO : remettre non emprunté et retourner true
+    this.#isBorrowed = false;
+    return true;
   }
 
   isBorrowed() {
-    // TODO : retourner true/false
+    return this.#isBorrowed;
   }
 }
 
@@ -38,17 +42,20 @@ class User {
   }
 
   borrow(book) {
-    // TODO :
-    // - appeler book.borrow()
-    // - si true : borrowedCount++ et return true
-    // - sinon return false
+    if(book.borrow() === true){
+      this.borrowedCount++;
+      return true
+    } else {
+      return false;
+    }
   }
 }
 
 class Librarian extends User {
   forceReturn(book) {
-    // TODO : forcer le retour du livre (book.returnBook())
-    // retourner true si réussi
+    if(book.returnBook() === true){
+      return true;
+    }
   }
 }
 

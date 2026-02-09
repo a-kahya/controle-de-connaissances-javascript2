@@ -1,18 +1,27 @@
-/*
-Exercice 1 — Médiane de deux tableaux triés
+let tab1 = [1, 2, 3, 4]
+let tab2 = [6, 7, 9, 10]
 
-Énoncé :
-On te donne deux tableaux de nombres triés nums1 et nums2.
-Retourner la médiane de l'ensemble des valeurs des deux tableaux réunis.
-
-Rappel :
-- Total impair -> élément du milieu
-- Total pair -> moyenne des 2 éléments du milieu
-*/
 
 function findMedianSortedArrays(nums1, nums2) {
   // TODO : écrire ton code ici
+  for(let i=0; i < nums2.length; i++){
+    nums1.push(nums2[i])
+  }
+   nums1.sort((a, b) => b - a);
+  if(nums1.length % 2 === 0){
+    let total = 0;
+    for(let i = 0; i < nums1.length;i++){
+      total = total + nums1[i]
+    }
+    let valeur1 = Math.floor(nums1.length/2)
+    let valeur2= Math.ceil(nums2.length/2)
+    let mediane = nums1[valeur1] + nums1[valeur2] /2
+    return mediane;
+  } else{
+    return nums1[Math.floor(nums1.length / 2)]
+  }
 }
+console.log(findMedianSortedArrays(tab1, tab2))
 
 // --------------------
 // Tests (au moins 3)

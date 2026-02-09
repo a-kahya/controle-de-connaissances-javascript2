@@ -1,14 +1,11 @@
-/*
-Exercice 3 — Supprimer une valeur
-
-Énoncé :
-Supprimer toutes les occurrences de val dans nums en place.
-Retourner k = nombre d'éléments restants.
-Les k premiers éléments de nums doivent être ceux conservés.
-*/
 
 function removeElement(nums, val) {
-  // TODO : écrire ton code ici
+  for(let i=0; i < nums.length;i++){
+    if(nums[i] === val){
+      nums.pop(nums[i])
+    }
+  }
+  return nums.length
 }
 
 // --------------------
