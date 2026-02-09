@@ -7,21 +7,21 @@ function findMedianSortedArrays(nums1, nums2) {
   for(let i=0; i < nums2.length; i++){
     nums1.push(nums2[i])
   }
-   nums1.sort((a, b) => b - a);
+   nums1.sort((a, b) => a - b);
   if(nums1.length % 2 === 0){
     let total = 0;
     for(let i = 0; i < nums1.length;i++){
       total = total + nums1[i]
     }
     let valeur1 = Math.floor(nums1.length/2)
-    let valeur2= Math.ceil(nums2.length/2)
-    let mediane = nums1[valeur1] + nums1[valeur2] /2
+    let valeur2= valeur1 -1
+    let mediane = (nums1[valeur1] + nums1[valeur2]) /2
     return mediane;
   } else{
     return nums1[Math.floor(nums1.length / 2)]
   }
 }
-console.log(findMedianSortedArrays(tab1, tab2))
+
 
 // --------------------
 // Tests (au moins 3)
