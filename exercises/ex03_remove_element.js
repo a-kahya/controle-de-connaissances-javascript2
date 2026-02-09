@@ -1,16 +1,15 @@
 
-function removeElement(nums, val) {
+/*function removeElement(nums, val) {
   for(let i=0; i < nums.length;i++){
     if(nums[i] === val){
       nums.pop(nums[i])
     }
   }
   return nums.length
-}
+}*/
 
 function removeElement(nums, val) {
-  let k = 0;
-
+  let k =0;
   for (let i = 0; i<nums.length;i++) {
     if (nums[i]!== val) {
       nums[k] = nums[i];
